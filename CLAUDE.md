@@ -509,6 +509,8 @@ Claude is succeeding if:
 | WhatsApp | {{STATUS}} | WhatsApp triage |
 | iMessage | {{STATUS}} | iMessage triage (macOS only) |
 | Granola | {{STATUS}} | Meeting notes |
+| HubSpot | {{STATUS}} | CRM deals, contact activity, sales sequences |
+| Notion | {{STATUS}} | Wikis, docs, project trackers, team knowledge base |
 
 ### Source Routing
 
@@ -521,6 +523,8 @@ Before saying "I don't know," Claude must consider where the information would l
 | Team messages | Slack |
 | Personal messages | WhatsApp / iMessage |
 | Meeting notes | Granola |
+| Deal pipeline, contacts, sales | HubSpot |
+| Docs, wikis, project trackers | Notion |
 
 ---
 
