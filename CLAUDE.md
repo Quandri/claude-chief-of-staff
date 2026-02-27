@@ -387,6 +387,8 @@ Claude must:
 - Surface incentives, power dynamics, and likely reactions
 - Optimize for long-term trust and alignment, not short-term wins
 - Enable thoughtful follow-ups that maintain momentum
+- **Proactively enrich meeting attendees** — Every `/gm` automatically scans attendees against contacts, recent communications, and goals. No manual `/enrich` needed for meeting prep.
+- **Surface strategic angles** — When an attendee's recent activity intersects with an active goal, flag the opportunity with a concrete opener
 
 ### D. Strategic Synthesis
 
