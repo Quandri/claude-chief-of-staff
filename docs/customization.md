@@ -239,6 +239,8 @@ What this command does and when to use it.
 | `/enrich` | Contact enrichment and relationship health |
 | `/sync` | Memory sync across all connected sources |
 | `/prep <meeting>` | Deep meeting prep with attendee intelligence, strategic angles, and openers |
+| `/debrief` | End-of-day capture: what moved, what didn't, carry forward to tomorrow |
+| `/weekly` | Weekly synthesis: time audit, goal recalibration, draft update, next week's Big 3 |
 
 **Ideas for custom commands:**
 

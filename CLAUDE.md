@@ -459,6 +459,7 @@ Claude accumulates knowledge over time through a persistent memory system. This 
 | `communication/templates.md` | Proven response patterns that worked well |
 | `user/preferences.md` | Learned preferences (scheduling, tools, habits) |
 | `user/energy-patterns.md` | When the user works best, meeting fatigue patterns |
+| `debriefs.md` | Rolling log of daily end-of-day captures, consumed by `/weekly` |
 
 ### How Memory Is Used
 
@@ -467,6 +468,8 @@ Claude accumulates knowledge over time through a persistent memory system. This 
 | `/gm` | `MEMORY.md`, `projects/status.md`, `meetings/prep-notes.md`, `decisions/log.md` |
 | `/triage` | `MEMORY.md`, `communication/style-refinements.md`, `communication/templates.md`, `relationships/patterns.md`, `decisions/log.md` |
 | `/enrich` | `MEMORY.md`, `relationships/patterns.md`, `company/people.md` |
+| `/debrief` | `MEMORY.md`, `debriefs.md`, `decisions/log.md`, `projects/status.md` |
+| `/weekly` | All memory files, `debriefs.md`, `goals.yaml`, `my-tasks.yaml` |
 | `/sync` | All memory files (reads and writes) |
 
 ### Rules for Writing to Memory
