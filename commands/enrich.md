@@ -155,6 +155,19 @@ When a new contact is suggested, create using this template:
 - **Follow-up needed:** [if any]
 ```
 
+### Cross-Reference with Memory
+
+When enriching contacts (any mode), also update `~/.claude/memory/relationships/patterns.md` with:
+
+- **Network dynamics** — Who talks to whom about what (detected from shared email threads, meeting co-attendance, Slack interactions)
+- **Influence patterns** — Who drives decisions in which domains (detected from email chains, meeting leadership)
+- **Sentiment shifts** — Changes in tone or engagement from key contacts (detected from communication frequency and tone)
+- **Cluster groups** — People who frequently appear together (detected from calendar co-attendance and CC patterns)
+
+Read `~/.claude/memory/relationships/patterns.md` before enriching to avoid duplicating existing observations. Update existing patterns rather than adding new entries for the same dynamic.
+
+Also cross-reference with `~/.claude/memory/company/people.md` for internal contacts to ensure team dynamics are captured in both the contact file and the memory system.
+
 ### Guidelines
 
 - Always include dates when adding notes (e.g., "Enjoys hiking (added 2026-01-18)")

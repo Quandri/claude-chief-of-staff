@@ -68,6 +68,13 @@ mkdir -p "$CLAUDE_DIR/contacts"
 mkdir -p "$CLAUDE_DIR/commands"
 mkdir -p "$CLAUDE_DIR/objectives"
 mkdir -p "$CLAUDE_DIR/task-outputs"
+mkdir -p "$CLAUDE_DIR/memory/company"
+mkdir -p "$CLAUDE_DIR/memory/decisions"
+mkdir -p "$CLAUDE_DIR/memory/meetings"
+mkdir -p "$CLAUDE_DIR/memory/projects"
+mkdir -p "$CLAUDE_DIR/memory/relationships"
+mkdir -p "$CLAUDE_DIR/memory/communication"
+mkdir -p "$CLAUDE_DIR/memory/user"
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
@@ -116,6 +123,27 @@ copy_if_missing "$SCRIPT_DIR/my-tasks.yaml" "$CLAUDE_DIR/my-tasks.yaml"
 copy_if_missing "$SCRIPT_DIR/schedules.yaml" "$CLAUDE_DIR/schedules.yaml"
 copy_if_missing "$SCRIPT_DIR/contacts/example-contact.md" "$CLAUDE_DIR/contacts/example-contact.md"
 
+# Copy memory templates
+echo -e "${GREEN}Installing memory system...${NC}"
+
+for memfile in "$SCRIPT_DIR/memory/"*.md; do
+    if [ -f "$memfile" ]; then
+        filename=$(basename "$memfile")
+        copy_if_missing "$memfile" "$CLAUDE_DIR/memory/$filename"
+    fi
+done
+
+for memdir in company decisions meetings projects relationships communication user; do
+    if [ -d "$SCRIPT_DIR/memory/$memdir" ]; then
+        for memfile in "$SCRIPT_DIR/memory/$memdir/"*.md; do
+            if [ -f "$memfile" ]; then
+                filename=$(basename "$memfile")
+                copy_if_missing "$memfile" "$CLAUDE_DIR/memory/$memdir/$filename"
+            fi
+        done
+    fi
+done
+
 # Copy commands
 for cmd in "$SCRIPT_DIR/commands/"*.md; do
     if [ -f "$cmd" ]; then
@@ -138,7 +166,8 @@ echo "  goals.yaml         — Quarterly objectives (edit these!)"
 echo "  my-tasks.yaml      — Task tracking"
 echo "  schedules.yaml     — Automation schedules"
 echo "  contacts/          — Contact files"
-echo "  commands/          — Skill definitions (gm, triage, my-tasks, enrich)"
+echo "  commands/          — Skill definitions (gm, triage, my-tasks, enrich, sync)"
+echo "  memory/            — Persistent memory system (enriched by /sync)"
 echo ""
 echo -e "${BOLD}Next steps:${NC}"
 echo ""
@@ -157,6 +186,7 @@ echo "     $ claude"
 echo "     > /gm            # Morning briefing"
 echo "     > /triage         # Inbox triage"
 echo "     > /my-tasks list  # See your tasks"
+echo "     > /sync           # Sync memory from all sources"
 echo ""
 echo -e "${YELLOW}Tip:${NC} The more you customize CLAUDE.md, the better Claude performs."
 echo "     Spend 30 minutes filling in your writing style examples and team info."

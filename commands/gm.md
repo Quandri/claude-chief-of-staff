@@ -31,6 +31,17 @@ Flag:
 - Back-to-back meetings with no buffer
 - Meetings with no clear agenda or purpose
 
+### Step 1.5: Memory Context
+
+Read `~/.claude/memory/MEMORY.md` for hot context. Then selectively read:
+
+- `~/.claude/memory/projects/status.md` — Surface project updates relevant to today's meetings
+- `~/.claude/memory/meetings/prep-notes.md` — Pull prep context for any recurring meetings on today's calendar
+- `~/.claude/memory/decisions/log.md` — Surface recent decisions tied to today's meeting attendees or topics
+
+Integrate this context into the briefing — don't present it as a separate section.
+Use it to enrich calendar items (e.g., "1:1 with Sarah — last time you discussed the platform migration, which is now at 80%") and to inform the focus recommendation.
+
 ### Step 2: Task Review
 
 Read `~/.claude/my-tasks.yaml` and identify:

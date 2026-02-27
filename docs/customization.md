@@ -242,6 +242,69 @@ What this command does and when to use it.
 
 ---
 
+## Memory System Customization
+
+The memory system (`~/.claude/memory/`) lets Claude accumulate knowledge across
+sessions. It enriches automatically via `/sync`, but you can customize how it works.
+
+### Memory Directory Structure
+
+```
+~/.claude/memory/
+├── MEMORY.md                 # Index — always loaded, links to topic files
+├── company/                  # Company knowledge, strategy, org dynamics
+├── decisions/                # Key decisions with rationale and outcomes
+├── meetings/                 # Cross-meeting patterns and prep notes
+├── projects/                 # Active project tracking
+├── relationships/            # Network dynamics and influence patterns
+├── communication/            # Style refinements and proven templates
+└── user/                     # Preferences and energy patterns
+```
+
+### Getting Started with Memory
+
+1. **Run `/sync`** after your first week of use — it needs communication history to work with
+2. **Run `/sync quick`** daily — refreshes hot context in ~1 minute
+3. **Run `/sync` fully** weekly — deep scan across all domains
+
+### Customizing Memory Behavior
+
+**Which domains matter most to you?**
+
+| Role | Priority domains |
+|------|-----------------|
+| CEO | `decisions/`, `company/`, `relationships/` |
+| VP Engineering | `projects/`, `decisions/`, `meetings/` |
+| Sales Leader | `relationships/`, `communication/`, `projects/` |
+| Solo Founder | `decisions/`, `projects/`, `user/` |
+
+**Adjusting memory retention:**
+- By default, most entries age out after 90 days
+- Decisions are kept for 6 months
+- Edit the Guidelines section at the bottom of any memory file to change retention rules
+
+**Seeding memory manually:**
+You can add entries to any memory file directly. Follow the format in each file's
+examples. This is useful for bootstrapping context that Claude wouldn't find in
+your communication channels (e.g., company strategy from a board deck, personal
+preferences you know but haven't expressed in email).
+
+**Adding new memory domains:**
+Create a new subdirectory and markdown file following the same template pattern.
+Add it to `MEMORY.md`'s File Index table. Update CLAUDE.md's Part 7.5 memory
+table so Claude knows when to read it.
+
+### Memory and Privacy
+
+Memory files are stored locally in `~/.claude/memory/`. They never leave your machine.
+The `/sync` command follows privacy rules:
+- No sensitive content (financial details, personal health, legal specifics) is stored directly
+- References are used instead (e.g., "Legal discussion re: vendor contract — see email thread")
+- You can review and edit any memory file at any time
+- Delete any file to reset that domain's memory
+
+---
+
 ## Tips for Continuous Improvement
 
 ### The Correction Loop
