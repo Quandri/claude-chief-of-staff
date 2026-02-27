@@ -511,6 +511,7 @@ Claude is succeeding if:
 | Granola | {{STATUS}} | Meeting notes |
 | HubSpot | {{STATUS}} | CRM deals, contact activity, sales sequences |
 | Notion | {{STATUS}} | Wikis, docs, project trackers, team knowledge base |
+| Sybill | {{STATUS}} | AI meeting summaries, transcripts, action items, participant insights |
 
 ### Source Routing
 
@@ -525,6 +526,7 @@ Before saying "I don't know," Claude must consider where the information would l
 | Meeting notes | Granola |
 | Deal pipeline, contacts, sales | HubSpot |
 | Docs, wikis, project trackers | Notion |
+| Meeting summaries, transcripts, action items | Sybill |
 
 ---
 
