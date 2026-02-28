@@ -180,6 +180,77 @@ npx @anthropic-ai/claude-code mcp add posthog
 
 ---
 
+### HubSpot
+
+Enables: CRM deal pipeline, contact activity, sales sequences, company records
+
+HubSpot offers both a remote hosted server and a local npm package. The remote
+server is recommended for most users.
+
+**Option A: Remote server (recommended)**
+
+Configure your MCP client to connect to `mcp.hubspot.com`. Create a HubSpot
+private app with CRM scopes (contacts, companies, deals, tickets) and
+authenticate via OAuth.
+
+See: https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server
+
+**Option B: Local server**
+
+```bash
+claude mcp add hubspot -- npx -y @hubspot/mcp-server
+```
+
+Set the `HUBSPOT_PERSONAL_ACCESS_KEY` environment variable, or use the HubSpot
+CLI flow with `hs mcp setup` (requires HubSpot CLI >= 7.60.0).
+
+See: https://developers.hubspot.com/docs/developer-tooling/local-development/mcp-server
+
+**Verify it works:**
+
+```
+> Show me open deals in HubSpot
+> What's the latest activity on [contact name]?
+```
+
+---
+
+### Notion
+
+Enables: Wiki search, doc retrieval, project tracker access, team knowledge base
+
+Notion offers a remote hosted server (recommended) and a local npm package
+that is being sunsetted.
+
+**Option A: Remote server (recommended)**
+
+Configure your MCP client to connect to `https://mcp.notion.com/mcp`.
+Authenticates via OAuth — no local install required.
+
+See: https://developers.notion.com/docs/mcp
+
+**Option B: Local server (being sunsetted)**
+
+```bash
+claude mcp add notion -- npx -y @notionhq/notion-mcp-server
+```
+
+Set the `NOTION_TOKEN` environment variable to your Notion integration token.
+
+Repo: https://github.com/makenotion/notion-mcp-server
+
+**Note:** Notion has stated they may sunset the local server. Prefer the remote
+server above.
+
+**Verify it works:**
+
+```
+> Search Notion for "product roadmap"
+> Show me the latest meeting notes in Notion
+```
+
+---
+
 ### Linear
 
 Enables: Issue tracking, project management, engineering workflow
