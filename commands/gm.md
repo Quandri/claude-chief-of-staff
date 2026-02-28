@@ -75,6 +75,12 @@ Add a brief heads-up to the meeting entry.
 - If a meeting has 6+ attendees, only enrich the top 3 most relevant (by tier, recency, or goal alignment)
 - If contact files don't exist for attendees, note it briefly ("3 attendees without contact files — want me to create them?")
 
+### Step 1.6: Yesterday's Carry-Forward
+
+Read `~/.claude/memory/debriefs.md` and check for the most recent debrief entry. If yesterday's debrief exists, pull the "Carry forward" items — these are things the user explicitly flagged to address today. Weave these into the Tasks and Focus Recommendation sections rather than listing them separately.
+
+If no recent debrief exists, skip this step silently.
+
 ### Step 2: Task Review
 
 Read `~/.claude/my-tasks.yaml` and identify:

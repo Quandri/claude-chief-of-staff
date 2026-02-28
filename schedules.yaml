@@ -36,6 +36,18 @@ schedules:
     enabled: true
     notes: "Warn about overdue or at-risk tasks"
 
+  - name: "End of Day Debrief"
+    skill: "/debrief"
+    frequency: "Daily at 5:30pm"
+    enabled: true
+    notes: "Capture what moved, what didn't, carry forward to tomorrow"
+
+  - name: "Weekly Synthesis"
+    skill: "/weekly"
+    frequency: "Weekly, Friday at 4:00pm"
+    enabled: true
+    notes: "Time audit, goal recalibration, draft weekly update, next week priorities"
+
   - name: "Relationship Check"
     skill: "/enrich stale"
     frequency: "Weekly, Monday at 9am"
