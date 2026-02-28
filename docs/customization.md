@@ -229,11 +229,21 @@ What this command does and when to use it.
 - [Important rules for this command]
 ```
 
+**Built-in commands:**
+
+| Command | What It Does |
+|---------|-------------|
+| `/gm` | Morning briefing with auto-enriched meeting attendees and strategic angles |
+| `/triage` | Inbox triage across all channels |
+| `/my-tasks` | Task management (list, add, complete, execute) |
+| `/enrich` | Contact enrichment and relationship health |
+| `/sync` | Memory sync across all connected sources |
+| `/prep <meeting>` | Deep meeting prep with attendee intelligence, strategic angles, and openers |
+
 **Ideas for custom commands:**
 
 | Command | What It Does |
 |---------|-------------|
-| `/prep <meeting>` | Prepare for a specific meeting with attendee research and talking points |
 | `/weekly` | Generate a weekly status update from calendar and completed tasks |
 | `/1on1 <person>` | Prepare for a 1:1 with agenda items, recent context, and open items |
 | `/board-update` | Draft a board update from goals progress and key metrics |
