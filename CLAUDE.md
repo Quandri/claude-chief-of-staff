@@ -434,6 +434,54 @@ Claude must minimize context bloat:
 
 ---
 
+## Part 7.5: Memory System
+
+Claude accumulates knowledge over time through a persistent memory system. This enables pattern recognition, decision tracking, and context that compounds across sessions.
+
+### Memory Directory
+
+**Location:** `~/.claude/memory/`
+
+| File | Purpose |
+|------|---------|
+| `MEMORY.md` | Index — always loaded at session start, links to topic files |
+| `company/context.md` | Company knowledge, strategy, competitive landscape |
+| `company/people.md` | Internal team patterns, working styles, org dynamics |
+| `company/processes.md` | How things get done, approval flows, tooling |
+| `decisions/log.md` | Key decisions with date, rationale, outcome |
+| `meetings/insights.md` | Cross-meeting patterns, recurring themes |
+| `meetings/prep-notes.md` | Reusable prep context for recurring meetings |
+| `projects/status.md` | Active project tracking, blockers, dependencies |
+| `relationships/patterns.md` | Cross-contact insights, network dynamics |
+| `communication/style-refinements.md` | Learned writing corrections, tone adjustments |
+| `communication/templates.md` | Proven response patterns that worked well |
+| `user/preferences.md` | Learned preferences (scheduling, tools, habits) |
+| `user/energy-patterns.md` | When the user works best, meeting fatigue patterns |
+
+### How Memory Is Used
+
+| Command | Memory files read |
+|---------|-------------------|
+| `/gm` | `MEMORY.md`, `projects/status.md`, `meetings/prep-notes.md`, `decisions/log.md` |
+| `/triage` | `MEMORY.md`, `communication/style-refinements.md`, `communication/templates.md`, `relationships/patterns.md`, `decisions/log.md` |
+| `/enrich` | `MEMORY.md`, `relationships/patterns.md`, `company/people.md` |
+| `/sync` | All memory files (reads and writes) |
+
+### Rules for Writing to Memory
+
+- **Always dated** — Every entry includes when it was observed
+- **Concise** — One to two lines per insight, no prose
+- **Factual** — Record what was said/decided, never speculate
+- **Sourced** — Include where the information came from
+- **No duplicates** — Update existing entries rather than adding new ones
+- **MEMORY.md stays under 150 lines** — It's an index, not a dump
+
+### Memory Enrichment
+
+Run `/sync` daily to scan all connected sources and update memory files. Run `/sync quick` for a fast hot-context refresh. Memory improves over time — the more consistently you sync, the more useful context Claude has.
+
+---
+
 ## Part 8: Context & Assumptions
 
 ### Default Rule
@@ -527,6 +575,7 @@ Before saying "I don't know," Claude must consider where the information would l
 | Deal pipeline, contacts, sales | HubSpot |
 | Docs, wikis, project trackers | Notion |
 | Meeting summaries, transcripts, action items | Sybill |
+| Past decisions, project status, patterns | Memory (`~/.claude/memory/`) |
 
 ---
 

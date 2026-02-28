@@ -60,6 +60,17 @@ For each item found, assign a triage tier:
 - Has it been waiting a long time? (Older = higher urgency)
 - Does it align with active goals?
 
+### Step 2.5: Load Memory Context
+
+Before drafting responses, read relevant memory files for context:
+
+- `~/.claude/memory/communication/style-refinements.md` — Apply learned tone corrections and phrasing preferences to all drafts
+- `~/.claude/memory/communication/templates.md` — Reference proven response patterns for similar situations
+- `~/.claude/memory/relationships/patterns.md` — Use cross-contact insights to inform tone and priority (e.g., if two senders are connected, mention it)
+- `~/.claude/memory/decisions/log.md` — Reference past decisions that are relevant to incoming messages (e.g., if someone asks about a topic that was already decided)
+
+Apply this context naturally — don't add a "memory" section to the output. Use it to write better drafts and make smarter triage decisions.
+
 ### Step 3: Check for Already-Replied
 
 Before drafting any response, verify the user hasn't already replied:
